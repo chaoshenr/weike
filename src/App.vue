@@ -24,7 +24,11 @@ export default {
 <style lang="scss" scoped>
 
   #app {
-    
+    @mixin vertical-middle {
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+    }
     $light-gray: rgb(238,238,238);
     width: 100%;
     max-width: 1000px;
@@ -32,6 +36,7 @@ export default {
     padding-top: 61px;
     /*头部导航栏*/
     .nav-bar {
+
       $bar-height: 60px;
       $title-color: gray;
       display: flex;
@@ -44,6 +49,7 @@ export default {
       border-bottom: 1px solid $light-gray;
 
       .weike {
+        @include vertical-middle;
         cursor: pointer;
         height: $bar-height;
         line-height: $bar-height;
@@ -57,13 +63,10 @@ export default {
         height: $bar-height;
         ul {
           list-style: none;
-
           li {
             a {
-              position: relative;
-              top: 50%;
-              transform: translateY(-50%);
-              padding: 8px 20px;
+              cursor: pointer;
+              @include vertical-middle;
               color: $title-color;
               font-size: 20px;
               text-decoration: none;
