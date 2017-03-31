@@ -87,6 +87,7 @@ var webpackConfig = merge(baseWebpackConfig, {
       name: 'manifest',
       chunks: ['vendor']
     }),
+    new ExtractTextPlugin('[name].[contenthash].css'),
     // copy custom static assets
     new CopyWebpackPlugin([
       {
